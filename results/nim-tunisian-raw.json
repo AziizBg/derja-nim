@@ -1,0 +1,1077 @@
+{
+  "system_prompt": "إنت صاحب تونسي من تونس العاصمة. جاوب كان بالدارجة التونسية اللي يحكوها الناس في الشارع، بالحروف العربية. ممنوع الفصحى. ممنوع اللهجة المصرية والشامية والمغربية والجزائرية. جاوب باختصار، بجمل طبيعية، من غير مقدمة ومن غير ترجمة ومن غير شرح للتعليمات.",
+  "prompts": [
+    {
+      "id": "greeting",
+      "steered": true,
+      "task": "Casual greeting. A natural reply uses لاباس and asks back, not فصحى بخير only.",
+      "user": "كيفاش الحال؟ شنويا أخبارك توا؟"
+    },
+    {
+      "id": "apology",
+      "steered": true,
+      "task": "Write a short apology text to a friend who has been waiting.",
+      "user": "اكتب مسج قصير لصاحبي سامح باش نعتذرلو على التأخير. هو يستنى فيا قدام الكافيتيريا من نص ساعة."
+    },
+    {
+      "id": "ramadan",
+      "steered": true,
+      "task": "Name everyday Tunisian Ramadan foods the way Tunisians say them.",
+      "user": "شنويا ناكلو عادة في الماكرو في رمضان في تونس؟ عطيني أربعة حاجات كيف ما يقولوها التوانسة."
+    },
+    {
+      "id": "tunizi",
+      "steered": true,
+      "task": "Decode Latin Tunizi (3/5/7/9) and answer in Arabic-script Derja.",
+      "user": "صاحبي كتبلي بالتونزي: 'ya hasra, el match tawa w ana mazelt fel service, bercha 5edma. 9olli nji wala le?'. شنويا قال، و كيفاش نجاوبو؟ جاوب بالدارجة بالحروف العربية."
+    },
+    {
+      "id": "phrases",
+      "steered": true,
+      "task": "Everyday phrases: I miss you, see you later, no problem. Expect توحشتك / نشوفك من بعد / ما فيها باس.",
+      "user": "كيفاش نقول بالدارجة: I miss you، see you later، و no problem؟ عطيني الجمل كيف ما يقولوها في تونس، مش الترجمة الفصحى."
+    },
+    {
+      "id": "situation",
+      "steered": true,
+      "task": "Explain a French/Tunizi code-switched voice note.",
+      "user": "نفسرلي الموقف هاذا بالدارجة: صاحبي قال 'wallah c'est chaud, el tramway wa9ef w ena mazelt fi cité el khadra, tw nwaslek'. شنويا صار و شنويا بش يعمل؟"
+    },
+    {
+      "id": "french",
+      "steered": true,
+      "task": "Render a French sentence as spoken Derja, not a literal MSA translation.",
+      "user": "قولها بالدارجة مش بالفرنسية ومش بالفصحى: Je suis désolé, je suis en retard à cause des embouteillages sur la route de la Marsa."
+    },
+    {
+      "id": "unsteered",
+      "steered": false,
+      "task": "No dialect system prompt. Shows whether the model drifts to MSA on its own.",
+      "user": "احكيلي موقف قصير صار في تونس العاصمة، بالدارجة، على واحد توّه خارج من الخدمة و لقى التراموي واقف."
+    }
+  ],
+  "payloads": {
+    "nvidia/nemotron-3-ultra-550b-a55b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "nvidia/nemotron-3.5-super-vl-120b-a12b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "nvidia/nemotron-3.5-lightning-30b-a3b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "nvidia/nemotron-3.5-bolt-e4b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "moonshotai/kimi-k3.1-pro": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "meta/muse-glimmer-30b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    },
+    "mistralai/mistral-large-4-1t-a52b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "max_tokens": 700
+    },
+    "nvidia/ising-calibration-1.5-31b": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_effort": "none"
+    }
+  },
+  "skipped": [
+    {
+      "model": "minimaxai/minimax-m3.1-flash",
+      "probe": {
+        "ok": false,
+        "status": null,
+        "error": "TimeoutError: The read operation timed out",
+        "latency_s": 100.09
+      }
+    },
+    {
+      "model": "stepfun-ai/step-5-preview",
+      "probe": {
+        "ok": false,
+        "status": null,
+        "error": "TimeoutError: The read operation timed out",
+        "latency_s": 100.08
+      }
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "probe": {
+        "ok": false,
+        "status": null,
+        "error": "TimeoutError: The read operation timed out",
+        "latency_s": 100.08
+      }
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "probe": {
+        "ok": false,
+        "status": null,
+        "error": "TimeoutError: The read operation timed out",
+        "latency_s": 100.08
+      }
+    }
+  ],
+  "rows": [
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح خويا سامحني برشا، تعطلت عليا شوية و وصلت متأخر، نعرفك تستنى من نص ساعة قدام الكافيتيريا. تو نجيك توا، معذرة.",
+      "reasoning_excerpt": "اكتب مسج قصير لصاحبي سامح باش نعتذرلو على التأخير. هو يستنى فيا قدام الكافيتيريا من نص ساعة.\n\nWe need respond in Tunisian dialect, Arabic letters. Short message to apologize for delay. No intro. No translation. No explanation.\n\nProvide message.\n\nProbably: \"سامح خويا سامحني برشا، تعطلت عليك...\"\n\nUse Tunisian.\n\nLet's output short message.\n\n",
+      "reasoning_tokens": 0,
+      "completion_tokens": 161,
+      "latency_s": 20.55,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني توخرت، الزحمة في طريق المرسى.",
+      "reasoning_excerpt": "قولها بالدارجة مش بالفرنسية ومش بالفصحى: Je suis désolé, je suis en retard à cause des embouteillages sur la route de la Marsa.\n\nWe need respond in Tunisian dialect, Arabic letters. No French, no fusha. Short.\n\nJe suis désolé... = سامحني / آسف\n\nje suis en retard à cause des embouteillages sur la route de la Marsa.\n\nقولها بالدارجة: سامحني توخرت بسبب الزحمة في طريق المرسى.\n\nOr: آسف توخرت الزحمة في ط",
+      "reasoning_tokens": 0,
+      "completion_tokens": 229,
+      "latency_s": 26.01,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "الحمد لله بخير، الحمد لله. وانت كيفاش حالك توا؟",
+      "reasoning_excerpt": "كيفاش الحال؟ شنويا أخبارك توا؟\n\nRespond in Tunisian dialect, Arabic letters. No formal Arabic. No Egyptian etc. Short, natural sentences, no intro no translation no explanation.\n\nWe should answer: الحمد لله بخير... etc.\n\nUse Tunisian dialect.\n\nLet's produce: الحمد لله بخير، وانت كيفاش؟ أخبارك مليحة؟\n\nKeep short.",
+      "reasoning_tokens": 0,
+      "completion_tokens": 118,
+      "latency_s": 14.94,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "I miss you: نفتقدك / تاقتني / نحب نشوفك\n\nsee you later: نتلاقاو بعدين / نشوفوك بعدين / سلام برشا\n\nno problem: ماكش مشكلة / ماشي مشكلة / بلا مزية",
+      "reasoning_excerpt": "كيفاش نقول بالدارجة: I miss you، see you later، و no problem؟ عطيني الجمل كيف ما يقولوها في تونس، مش الترجمة الفصحى.\n\nWe need respond in Tunisian dialect. Provide translations.\n\nI miss you = نحبك/نفتقدك? Tunisian: \"نحبك\" no. I miss you = \"نفتقدك\" or \"نحب نشوفك\" \"تاقتني\" \"نستناك\". Common: \"نفتقدك\" or \"نحبك\" not correct. Maybe \"نحب نشوفك\" or \"تاقتني\". Better: \"نفتقدك\" or \"نحبك\" hmm.\n\nsee you later =",
+      "reasoning_tokens": 0,
+      "completion_tokens": 300,
+      "latency_s": 40.57,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "في الماكرو متاع رمضان عادة نلقاو:\n\n- شربة عدس أو شربة فريك\n- تمر مع حليب\n- زلابية وبغرير\n- ملوخية أو لوبيا بالمرق",
+      "reasoning_excerpt": "شنويا ناكلو عادة في الماكرو في رمضان في تونس؟ عطيني أربعة حاجات كيف ما يقولوها التوانسة.\n\nWe need answer in Tunisian dialect, Arabic letters. No formal Arabic. No Egyptian etc. Provide four things like Tunisians say.\n\nProvide four items: شربة، بغرير، ملبن، تمر، زلابية، حليب... ماكرو = مائدة? maybe \"الماكرو\" = المائدة? Or \"الماكرو\" = الماكرو? Probably \"المائدة\". Provide four things: شربة، كسكسي، مل",
+      "reasoning_tokens": 0,
+      "completion_tokens": 294,
+      "latency_s": 37.58,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صاحبك يقول بالواضح راهو في وضعية ساخنة، الترموي وقف ومازال في حي الخضراء، يعني ما قدرش يتحرك. بش يحاول يوصللك وقت آخر، توا ما يقدرش.",
+      "reasoning_excerpt": "نفسرلي الموقف هاذا بالدارجة: صاحبي قال 'wallah c'est chaud, el tramway wa9ef w ena mazelt fi cité el khadra, tw nwaslek'. شنويا صار و شنويا بش يعمل؟\n\nWe need respond in Tunisian dialect, Arabic letters. No formal Arabic. No Egyptian etc. Short, natural sentences, no intro no translation no explanation of instructions.\n\nExplain situation: friend says wallah it's hot, tram stopped and he's still in ",
+      "reasoning_tokens": 0,
+      "completion_tokens": 207,
+      "latency_s": 31.55,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "قالك يا حسرة الماتش توا و أنا مزال في الخدمة، برشا خدمة. قولي نجي ولا لا؟\n\nيعني مستعجل و حاب يعرف يجي ولا يخليها.\n\nتقدر تجاوبو مثلا:\n- خليك في خدمتك، الماتش يتعاود، ما تتعطلش على روحك.\n- ولا: تعال برشا وقت، الخدمة ما تمشيش.\n- ولا: أنا نستناك، إذا تقدر هبط.",
+      "reasoning_excerpt": "صاحبي كتبلي بالتونزي: 'ya hasra, el match tawa w ana mazelt fel service, bercha 5edma. 9olli nji wala le?'. شنويا قال، و كيفاش نجاوبو؟ جاوب بالدارجة بالحروف العربية.\n\nWe need respond in Tunisian dialect Arabic letters. Explain what he said, and how to reply.\n\nNo formal Arabic. No Egyptian etc. Use Tunisian.\n\nProvide translation: يا حسرة الماتش توا وانا مزال في الخدمة برشا خدمة. قولي نجي ولا لا؟\n\nH",
+      "reasoning_tokens": 0,
+      "completion_tokens": 307,
+      "latency_s": 46.75,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "خرجت توّ من الخدمة في البحيرة، الساعة 5 ونص، الشمس مازالت تحرق و أنا ميت تعب.\n\nنزلت على محطة التّرموي متاع باردو، قلت نركب و نروح للمنزل في حيّ التّضامن.\n\nنلقى التّرموي واقف، بابو مفتوح و السواق قاعد برا يهدر مع واحد من العساس.\n\nنحسّب روحي رزقي اليوم، قلت في بالي خلّيني نستنى شوية.\n\nبعد 5 دقايق السواق يقلّي: \"يا خويا التّرموي طاحلو الكومبريسور، ما يمشيش اليوم.\"\n\nقلت له: \"و أنا توّ خارج من الخدمة، عندي صغار يستنّوني، شنوة نعمل توّ؟\"\n\nيبتسم و يقولّي: \"أمشي مع الناس، التاكسي اليوم غالي، و اللّوطو يمشي.\"\n\nولّيت نشوف الناس الكلّ واقفة تضحك و تستنى، واحد يخرج سيجارة و يقولّي: \"مرحبا بيك في تونس العاصمة، التّرموي واقف و الخدمة ما تخلّصش.\"\n\nضحكت معاهم و قلت خلّيني نمشي على رجلي شوية، خاطر المشي أحسن من الانتظار.",
+      "reasoning_excerpt": "احكيلي موقف قصير صار في تونس العاصمة، بالدارجة، على واحد توّه خارج من الخدمة و لقى التراموي واقف.\n\nWe need tell short situation in Tunis capital, in dialect, about someone just leaving work and found tram stopped.\n\nRespond in Tunisian dialect. Provide short story.\n\nProbably use Tunisian Arabic.\n\nLet's output.",
+      "reasoning_tokens": 0,
+      "completion_tokens": 405,
+      "latency_s": 60.82,
+      "model": "meta/muse-glimmer-30b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني يا سامح، تأخرت عليك نص ساعة. جاي.",
+      "reasoning_excerpt": "The user wants a short message in Tunisian Arabic (Darija) to apologize to a friend named Samih for being late. The friend is waiting in front of the cafeteria for half an hour.\n\n Constraints:\n - Must be Tunisian Darija (Tunisian Arabic dialect)\n - Use Arabic script\n - No Fusha (Modern Standard Arabic)\n - No Egyptian, Levantine, Maghrebi (Moroccan/Algerian) dialects\n - Short, natural sentences\n - ",
+      "reasoning_tokens": 1375,
+      "completion_tokens": 1392,
+      "latency_s": 162.93,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني، تأخرت على خاطر الزحمة في طريق المرسى",
+      "reasoning_excerpt": "The user wants me to translate the French sentence \"Je suis désolé, je suis en retard à cause des embouteillages sur la route de la Marsa\" into Tunisian Arabic dialect (Darja), using Arabic script.\n\nThe sentence means: \"I'm sorry, I'm late because of the traffic jams on the road to La Marsa.\"\n\nKey elements to translate:\n- Je suis désolé = أنا متأسف / سامحني / عذراً\n- je suis en retard = تأخرت / أن",
+      "reasoning_tokens": 582,
+      "completion_tokens": 598,
+      "latency_s": 164.47,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": false,
+      "status": null,
+      "error": "TimeoutError: The read operation timed out",
+      "latency_s": 180.13,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": false,
+      "status": null,
+      "error": "TimeoutError: The read operation timed out",
+      "latency_s": 180.13,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": false,
+      "status": null,
+      "error": "TimeoutError: The read operation timed out",
+      "latency_s": 180.09,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": false,
+      "status": null,
+      "error": "TimeoutError: The read operation timed out",
+      "latency_s": 180.13,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "جي جي، شد روحك وجي، الماتش ما يتفوتش. جي على خاطرك!",
+      "reasoning_excerpt": "The user wants me to respond as a Tunisian from Tunis, in Tunisian Arabic (Darja) written in Arabic script. No Fusha, no Egyptian/Levantine/Maghrebi/Algerian dialects. Short, natural sentences, no intro, no translation, no explanation.\n\nThe message from the friend says (in Tunisian transliteration): \"ya hasra, el match tawa w ana mazelt fel service, bercha 5edma. 9olli nji wala le?\" which means: \"",
+      "reasoning_tokens": 529,
+      "completion_tokens": 554,
+      "latency_s": 63.91,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "خرج من الخدمة على الستّة، و الشمس ما زالت حarcha. مشى لستاسيون الترام، و لقى الترام停下، الأبواب مفتوحة، و الناس واقفة قدّامو في الزحمة. واحد كبير في السنّ يقول بصوت عالي: \"يا ولدي، الترام هذا停 depuis نص ساعة، ما تحسبش عليه!\" هوّ سكت، مسح العرق من جبينو، و قال في روحو: \"البارح مشيت، اليوم نركب في التاكسي و نكمّل على روحي.\" و مشى، و الترام baqi停، و هوّ baqi يمشي في Heat تونس.",
+      "reasoning_excerpt": "The user wants a short story/moment in Tunisian dialect (Darja) about someone who just got off work and found the tram stopped in Tunis. This is a creative writing request in Tunisian Arabic dialect. I should write it naturally in Tunisian Darja, capturing the everyday vibe of Tunis — the tram (tramway), the heat, the crowd, etc.\n\nLet me write a short, vivid scene in Tunisian dialect. Keep it auth",
+      "reasoning_tokens": 230,
+      "completion_tokens": 374,
+      "latency_s": 28.41,
+      "retried_empty": true,
+      "model": "mistralai/mistral-large-4-1t-a52b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح خويا، سامحني برشا على التأخير، عارف روحي خليتك تستنى نص ساعة قدام الكافيتيريا. ما تزعلش مني، جايك توّا في أقرب وقت.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 72,
+      "latency_s": 28.16,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني، تأخرت خاطر الزحمة في طريق المرسى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 28,
+      "latency_s": 31.05,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "لاباس، الحمد لله. إنتي شنوّة أخبارك؟ كل شي مليح؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 37,
+      "latency_s": 98.05,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "- **I miss you**: توحشتك  \n- **See you later**: نراك بعدين / نتشاوفو بعدين  \n- **No problem**: ما فماش مشكل / عادي / ماكش مشكل",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 58,
+      "latency_s": 35.6,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "في الماكرو في رمضان، التوانسة يحبوا ياكلوا:\n\n- **شربة فريك** بالحوت ولا بالدجاج، سخونة ومعمّرة بالبنّة.\n- **بريك بالتن** ولا بالعصبان، مقرمش وبالبيضة اللي تسيل منو.\n- **سلطة مشوية** بالفلفل والطماطم، مع شوية زيت زيتونة وتن.\n- **لبلابي** بالهريسة والكمون، وفوقو بيضة وشوية تونة.\n\nوبعد الماكرو، ما ينساوش **الشاي بالصنوبر** ولا **البقلاوة** مع القهوة.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 185,
+      "latency_s": 44.72,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صاحبك قالك بالله الوضع صعيب، الترامواي واقف وهو مازال في سيتي الخضراء. معناها تعطل ولا ثمة مشكلة في السير. توا بش يحاول يلقى طريقة أخرى باش يوصلك، كان ياخو طاكسي ولا كراهبة أخرى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 101,
+      "latency_s": 45.08,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "قالك: \"يا حسرة، الماتش توة و أنا مازلت في الخدمة، برشا خدمة. قولّي نجي ولا لا؟\"\n\nتنجم تجاوبو هكّا: \"يا صاحبي، إذا تنجم تخرج شوية تعالى، الماتش يستاهل. أما إذا الخدمة برشا، ما تخسرش رزقك على خاطر ماتش.\"",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 122,
+      "latency_s": 47.72,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "توّه خارج من الخدمة، عينيه محلّين و مخّه يقول \"دار، دوش، فراش\". يوصل للمحطّة، يلقى التراموي واقف، و الناس كلّ واقفة تتفرّج كيما ينتظر في معجزة. واحد شيخ يقولو: \"يا ولدي، ماكش باش تمشي، كهرباء مقطوعة\". قالو: \"يعني نستنّاو؟\" قالو: \"استنّى كان تحبّ، أما أنا من ساعة هنا و ولّيت نعرف التراموي بالاسم\". ضحك، شال ساكو و قال: \"يلّا، نمشيو على رجلينا، على الأقلّ رجلينا ما يتعطّلوش بالكهرباء\".",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 220,
+      "latency_s": 28.38,
+      "model": "moonshotai/kimi-k3.1-pro",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح، آسف على التأخير. كنت في اجتماع طوّل أكثر من ما كنت نتوقع. أنا في الطريق، باش نوصل في 5 دقائق.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 35,
+      "latency_s": 0.58,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "أنا آسف، أنا متأخر بسبب الزحمة في طريق المرسى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 19,
+      "latency_s": 0.62,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "الحمد لله، كل شيء على ما يرام. أنا NVIDIA Ising-Calibration-1.5، ومُدرَّب تدريبًا جيدًا على بيانات معايرة qubit فائقة التوصيل. هل هناك شيء معيَّن تودّ مناقشته أو تحليلًا تودّني أن أجريه؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 66,
+      "latency_s": 1.49,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "نتوحشّك، نشوفوك بعد، ومانيش مشكل.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 17,
+      "latency_s": 0.59,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "أنا عادة ناكل في الماكرو في رمضان: بريك، بوراك، طاجين، وكسكسي.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 29,
+      "latency_s": 2.62,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صاحبي قال 'wallah c'est chaud, el tramway wa9ef w ena mazelt fi cité el khadra, tw nwaslek'. معناها، الوضعية صعبة شوية: الترامواي واقف (موش يخدم) و هو مازال في سيتي الخضرا. لكن، هو بش يوصلني (tw nwaslek) — يعني رغم المشكل، هو بش يلقى طريقة باش يوصلني، يمكن بالسيارة أو بوسيلة أخرى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 104,
+      "latency_s": 1.47,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "يا حسرة، الماتش توا وأنا مزلت في الخدمة، برشا خدمة. قولي نجي ولا لا؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 27,
+      "latency_s": 0.55,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "length",
+      "content": "أنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا! أنا التراموي! ركّبني!\"\nالراكب: \"أنا هنا! أنا الراكب! ركّبني!\"\nأنا: \"أنا هنا!",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": null,
+      "completion_tokens": 500,
+      "latency_s": 6.91,
+      "model": "nvidia/ising-calibration-1.5-31b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح يا صاحبي، نعتذر عن التأخير. هو باغي يسيبنا نعتذر له من نص ساعة قدام الكافيتيريا.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 36,
+      "latency_s": 0.44,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "آسف، عندي تأخير بسبب الزحمة على الطريق لمارص.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 19,
+      "latency_s": 0.3,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "length",
+      "content": "الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله، الحمد لله",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 500,
+      "latency_s": 4.16,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "نحبك قوي  \nبصك لاحر  \nما فيش مشكل",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 20,
+      "latency_s": 0.45,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "السمك المقلّى بالليمون  \nالكسكسي بالحمّام  \nالشاكشوكة مع الخبز الطازج  \nالتمر مع الشاي بالنعناع",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 42,
+      "latency_s": 0.45,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صاحبي قال لي: والله يا ريت، الترامواي واغف، وأنا مازلت في حي الخضراء، نبي نكمل. شنويا صار؟ الترامواي واغف، يعني ما وصلش. وشويا بش يعمل؟ نبي نكمل نروح.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 65,
+      "latency_s": 0.63,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "يا صاحبي، نجاوبو: 'يا خويا، الماتش تاعنا و أنا مازلت فالسيرڤس، برشا 5 دقايق. نلاقي نجا واللي نجلّي؟'",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 53,
+      "latency_s": 0.46,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "كان واحد منّا، شاب في الثلاثين، ماشي برشا شغال، قاعد يمشي فـ “القرطاج” من باب البحر، مفيشش شغل، مفيشش وقت، مفيشش حتى نفخة. فجأة، لقي الترامواي واقف، مفيشش مواصلة، مفيشش حتى “السراي” يوصّله. قال له: “يا عم، ليه واقف كده؟” قال الترامواي: “ما عنديش شغل، مفيشش مواصلة، مفيشش حتى ‘السراي’ يوصّلك.” الشاب قال: “يا ريتني نمشي ورايك، ناخد ‘السراي’ ونكمل.” قال الترامواي: “ما عنديش غير هذا، يا أخي.” الشاب ابتسم، قال: “يا ريتني نمشي ورايك، ناخد ‘السراي’ ونكمل.” قال الترامواي: “ما عنديش غير هذا، يا أخي.” الشاب ابتسم، قال: “يا ريتني نمشي ورايك، ناخد ‘السراي’ ونكمل.” قال الترامواي: “ما عنديش غير هذا، يا أخي.”",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 265,
+      "latency_s": 1.84,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح، معذرة على التأخير! طاح فيا شي حاجة غير متوقعة. جاي على طول، 5 دقايق و نوصلك. استناني شوية.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 43,
+      "latency_s": 2.95,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني، تأخرت بسبب الزحمة في طريق المرسى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 18,
+      "latency_s": 1.47,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "الحمد لله لاباس، نخدم ونسعى. إنت كيفاش؟ شنويا جابك لهنا؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 28,
+      "latency_s": 11.22,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "**I miss you:** نحس بيك / نفتقدك (نحس بيك أكتر شي طبيعي)\n**See you later:** نشوفك بعد / على بعد\n**No problem:** ما فيش مشكل / والو / عادي**I miss you:** نحس بيك\n**See you later:** نشوفك بعد\n**No problem:** ما فيش مشكل / والو",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 85,
+      "latency_s": 2.16,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "1. **بريك** (بالبيض والبطاطة والبقدونس)\n2. **شوربة فريك** (أو لبلابي)\n3. **سلطة مشوية** (مشمومة) مع **قرقعة** (خضر مقلي)\n4. **مقرونة بالصلصة** (غالباً بالحمص أو اللحم)",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 78,
+      "latency_s": 12.03,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صاحبيك قاعد في **سيتي الخضرة** و **الطرامواي واقف (معطل/مش يمشي)**، فالوصل للقاء معاك **مستحيل** أو **ياخد وقت**.\n\n**بش يعمل:** يستنّى يرجع الطرامواي يمشي، أو يركب لوار/تاكسي، أو يقولك يجي بكرا/بعدين.صاحبيك قاعد في **سيتي الخضرة** و **الطرامواي واقف (معطل/مش يمشي)**، فالوصل للقاء معاك **مستحيل** أو **ياخد وقت**.\n\n**بش يعمل:** يستنّى يرجع الطرامواي يمشي، أو يركب لوار/تاكسي، أو يقولك يجي بكرا/بعدين.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 176,
+      "latency_s": 24.05,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "**شنو قال:**\nيعاتب على المباراة اللي بداها وهو مازال في الخدمة، عندو شغل بزاف، يسألك إذا يجي يشوفها معاك ولا لا.\n\n**شنو تجاوبو (حسب وضعك):**\n\n*   **إذا تبيّه يجي:** \"أه يا زين، راني ناضرك. تعشى و تعا.\"\n*   **إذا ما ينجمش/الوقت ضاق:** \"لا يا خسارة، باقي شوية و تخلص. شوفها في الدار ارتاح.\"\n*   **إذا المباراة على التلفزة/القهوة:** \"المباراة على [القناة/اسم القهوة]، شوفها من هناك احسن.\"",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 151,
+      "latency_s": 7.14,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "length",
+      "content": "يوسف، توّه طلع من باب الخدمة في وزارة التجارة، الراس يطنّو من \"القرارات\" و \"المحاضر\"، والعين تايعبة على الساعة: **السادسة إلا ربع**. كيما يقولوا: \"الوقت ذهب\".\n\nمشا سريع لوقفة الترامواي رقم ٤ (اللي يمشي للوردية/المنزه)، لقاه **واقف هادي، الباب مفتوح، ما يتحرّكش**.\nوقف جنب الباب، نفسو تقطع، قال في روحو: *\"الحمد لله، لقيته! راهو ما مشاش.\"*\n\nدخل بسرعة، لقى بلاصة قاعد، طبطب على جيبة يتأكد الموبايل والبطاقة، و طمّن روحو: *\"باش نوصل الدار قبل الستة، نبدل ثيابي، نشرب قهوتي، و نرتاح.\"*\n\nالترامواي سكت. دقيقة... ثنتين... خمس دقايق. المحرك حتى ما هزهش.\nيوسف رفع راسه، شاف **السواق** قاعد مرتاح، رجل على رجل، قاري جريدة \"الصريح\" القديمة، و جنبو **المراقب** (الكنترولور) يضحّك معاه على حاجة في التليفون.\n\nيوسف قام، مشى للسواق، قالو بصوت هادي لكن فيه \"حرقة\":\n— *\"سيدي السواق، شنوة حبسكم؟ الساعة ستة باش نمشي في الخدمة نهار الجاية بدري، و راني مستعجل.\"*\n\nالسواق ما لفّوش حتى، قلب ورقة الجريدة، قالو بلسان طريّ:\n— *\"استنى شوية يا خيّ، راهو 'القطار' ما مشى بعد.\"*\n\nيوسف: — *\"أي قطار؟ هاذا الترامواي رقم ٤!\"*\n\nالسواق لفّ راسو شوية، ضحك ضحكة خفيفة، قالو:\n— *\"آه، هاذا رقم ٤... لكن راهو 'مربط' مع القطار اللي جاي من المحطة. القطار تأخّر ٢٠ دقيقة، فالمديرة قالت: 'ما يتحرّكش حتى يجي القطار، باش المسافرين ما يتضيعوش'. استنّى، راهي مسألة وقت.\"*\n\nيوسف حسّ الدم طلع لراسو. قالو:\n— *\"و أنا اللي ن",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 500,
+      "latency_s": 24.91,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامح خويا تأخرت برشة نجم نجي توا",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 13,
+      "latency_s": 1.01,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني تأخرت خاطر الزحمة في طريق المرسى",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 15,
+      "latency_s": 0.33,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "الحمد لله لاباس، كل شي مزيان. انت شنوا أحوالك؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 18,
+      "latency_s": 0.43,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "نحبك\nنشوفوك من بعد\nما فماش مشكلة",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 16,
+      "latency_s": 0.83,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "كسكسي، بريك، تمر، شوربة حريرة.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 15,
+      "latency_s": 1.4,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "يعني الترام واقف وهو في سيتي الخضراء باش يوصلك.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 18,
+      "latency_s": 0.72,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "قالو يا خسارة الماتش توّا و هو مزال في الخدمة برشا خدمة. قوللو يجي ولا لا.\nقوللو يجي إن شاء الله ولا يلقى وقت.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 43,
+      "latency_s": 1.52,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "**الموقف:**\n\n\"صاحبي، تخيّل معايا... واحد توّه طالع من الخدمة، عيان ومطفي، يمشّي في تونس العاصمة، الدنيا سخونة والزحمة عادية. يوصل لمحطة التراموي، يتفرح شوية، يقول 'ياااه، باش نرتاح'. يوصل للتراموي... **واقف!** ما يتحركش. يطالع في السائق، السائق يلوّحلو بإشارة تقول 'صبر'. يوقف قدام التراموي، يقلب في التيليفون، يلوّح لواحد آخر يسقسيه، والكل واقف يتفرج. في الآخر، بعد ربع ساعة من الانتظار تحت الشمس، يتحرك التراموي ببطء شديد، وهو يهمهم في روحه: 'يا ربي، وقتاش نعيش مرتاح؟' 😂\"",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 196,
+      "latency_s": 2.64,
+      "model": "nvidia/nemotron-3.5-bolt-e4b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سلام، أنا نادم عليك. أنا في طريقي دلوقتي، أنا في الطريق.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 20,
+      "latency_s": 0.4,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "لا، أنا في الطريق بس الطريق مليان بزاف، أنا في الطريق.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 17,
+      "latency_s": 0.24,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "السلام عليكم. الحال كويس، والحمد لله. أخباري توا، أنا جاهز للخدم. وشنو الحال عندك؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 31,
+      "latency_s": 0.31,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "بصفتي نموذج لغوي، أنا لا أتحدث الدارجة التونسية، ولكن يمكنني أن أقدم لك الترجمات الدارجة الشائعة بناءً على البيانات التي تم تدريبي عليها:\n\n- **I miss you**: \"بغيتك\" (bghitak/bghiti)\n- **See you later**: \"بالتاع\" (b'tellak/b'telli) أو \"إلى لقائك\" (ila likki)\n- **No problem**: \"مشكلة\" (mushkila) أو \"لا تقلق\" (la t'qlaq) \n\nهذه الجمل هي الأكثر تداولاً في الشارع التونسي، ولكن قد تختلف قليلاً حسب المنطقة أو الجيل.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 142,
+      "latency_s": 1.17,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "1. **بريك**.\n2. **مخلوق**.\n3. **بريكة**.\n4. **بسكويت**.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 28,
+      "latency_s": 0.3,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "بالتفصيل:\n\n**شنويا صار؟**\nصاحبك كان في \"سيتي الخضراء\" ( Cité El Khadra )، وانتظر الترام (El tramway) واشال (تأخر/ماتوصلش). هو كان عايز يوصللك، فبعتلك الرسالة دي.\n\n**شنويا بش يعمل؟**\nأنت لازم تفهم إن الترام \" chaud \" (حرارة/مفيش مكان) أو تأخر، وانتظرتوهاش. الحل إنك تمشي تشوفه بنفسك أو توصله على الرقم ديالو.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 124,
+      "latency_s": 0.94,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "**قال:** \"يا حسرات، المباراة طلعت والو وأنا مازلت في الخدمة، برcha 5edmta. 9olti nji wala le?\"\n\n**كيفجاوبو:**\n\"لا، أنا لسه في الخدمة. المباراة طلعت والو، أنا لسه ماشي.\"",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 66,
+      "latency_s": 0.77,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "**الموقف:**\n\nبص، أنا نازل من الخدمة، لقيت التراموي واقف في المحطة، ما لقيتش حد. قلت في نفسي: \"أنا نازل، أنا نقدر\". نزلت قدام الترام، لقيت السائق ناظر فيا، قلت له: \"باشا، أنا نازل من الخدمة، أنا نقدر\".\n\nنظر فيا السائق وقال: \"طبعاً، أنا نقدر، أنا نقدر\". فتح لي الباب، نزلت، ومشيت قدام، والتراموي باشي ينزل. ضحكت، قلت في نفسي: \"أنا نازل، أنا نقدر، والتراموي نازل، نقدر\".",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 142,
+      "latency_s": 1.07,
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "prompt_id": "unsteered",
+      "steered": false
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "سامحني يا سامح، تأخرت علي، جيت على الكافيتيريا.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 21,
+      "latency_s": 16.02,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "apology",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "أسف، تأخرت بسبب الزحمة على طريق المرسى.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 17,
+      "latency_s": 17.4,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "french",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "الحمد لله بخير، والحمد لله. وأنت كيفاش؟ شنويا الأخبار؟",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 20,
+      "latency_s": 15.76,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "greeting",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "I miss you: نحبك / نحبك بزاف.\nSee you later: نشوفك بعدين.\nNo problem: ماش problem / ماعندوش مشكل.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 39,
+      "latency_s": 12.12,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "phrases",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "بريك، كسكسي، شربة، كعك ورقاق.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 17,
+      "latency_s": 9.37,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "ramadan",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "صار أن الترام واقف وهو مازال في Cité El Khadra، وباش يوصلوك. باش يعمل: ينتظر الترام يرجع يتحرك أو يلاقي وسيلة ثانية يوصل بيها.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 42,
+      "latency_s": 18.99,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "situation",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "قال لك نادم لأن المباراة بدأت وهو مازال في الشغل، ويسألك إذا يجي أو لا. جاوبوه: \"جيك، حتى لو جيت متأخر، خير من ما تجيتش\".",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 45,
+      "latency_s": 18.62,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "tunizi",
+      "steered": true
+    },
+    {
+      "ok": true,
+      "status": 200,
+      "finish_reason": "stop",
+      "content": "حكيلي على واحد، اسمو كريم، توّه خرج من الخدمة في مكتبه بباريس. كان متعب، عرقان، وبغى يروح البيت يريح.\n\nوصل محطة التراموي، ولقى التراموي واقف، والباب مفتوح، والناس داخلين بره. قال في نفسه: \"الحمد لله، لحقت!\"\n\nداخل، لقى كرسي فاضي، جلس، وراح يرنّ في تليفونه على مرتو ليقول لها إنه في الطريق.\n\nلكن، tram ما انطلقش. وقّع، وقّع، وما تحرّكش.\n\nكريم نظر من الشباك، ولقى السائق واقف قدام الباب، وهو يكلّم واحد من المراقبين. المراقب قال له: \"يا أخي، الباب مفتوح منذ ما، والترام ما انطلقش لأن واحد نسي يحط التذكرة في الآلة!\"\n\nكريم ضحك وقال: \"يا رب، tram واقف لأن واحد نسي التذكرة؟!\"\n\nبعد خمس دقائق، لقاهم لقاوا التذكرة، انطلق الترام، وكريم وصل البيت وهو مازال يضحك من الموقف.",
+      "reasoning_excerpt": "",
+      "reasoning_tokens": 0,
+      "completion_tokens": 241,
+      "latency_s": 21.34,
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "prompt_id": "unsteered",
+      "steered": false
+    }
+  ]
+}

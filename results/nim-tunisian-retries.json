@@ -1,0 +1,120 @@
+[
+  {
+    "ok": false,
+    "error": "TimeoutError: The read operation timed out",
+    "latency_s": 200.13,
+    "model": "minimaxai/minimax-m3.1-flash",
+    "prompt_id": "greeting"
+  },
+  {
+    "ok": true,
+    "content": "قالولك: «يا حسرى، الماتش توّا وأنا مازلت في الخدمة، برشا خدمة. قولي نجي ولا لا؟»\n\nنجاوبو هكّا: «أخويا، خلّيك في الخدمة ديالك وما تسيبش، الماتش توا ما ينجمش نجي. نقولّك نتلصّا فيه ونعطيك النتيجة، ولا نعيّطلك بعد ما يخلص؟»",
+    "latency_s": 99.4,
+    "finish": "stop",
+    "completion_tokens": 105,
+    "reasoning_tokens": null,
+    "model": "minimaxai/minimax-m3.1-flash",
+    "prompt_id": "tunizi"
+  },
+  {
+    "ok": true,
+    "content": "- I miss you: **نشتاقلك** (أو: **بشوق ليك**)\n- See you later: **نشوفوك بعدين** (أو: **نلقاك بعدين**)\n- No problem: **ما فيها مشكل** (أو: **عادي، لا يهمّك**)",
+    "latency_s": 102.82,
+    "finish": "stop",
+    "completion_tokens": 74,
+    "reasoning_tokens": null,
+    "model": "minimaxai/minimax-m3.1-flash",
+    "prompt_id": "phrases"
+  },
+  {
+    "ok": true,
+    "content": "نشالله، أنا في تأخير بسبب الازدحام في طريق المرسى.",
+    "latency_s": 107.52,
+    "finish": "stop",
+    "completion_tokens": 21,
+    "reasoning_tokens": null,
+    "model": "minimaxai/minimax-m3.1-flash",
+    "prompt_id": "french"
+  },
+  {
+    "ok": true,
+    "content": "الحمد لله، نحب نكون بخير. وأنت كيفاش؟ شنويا أحوالك؟",
+    "latency_s": 7.53,
+    "finish": "stop",
+    "completion_tokens": 244,
+    "reasoning_tokens": 221,
+    "model": "stepfun-ai/step-5-preview",
+    "prompt_id": "greeting"
+  },
+  {
+    "ok": true,
+    "content": "",
+    "latency_s": 123.19,
+    "finish": "length",
+    "completion_tokens": 400,
+    "reasoning_tokens": 400,
+    "model": "stepfun-ai/step-5-preview",
+    "prompt_id": "tunizi"
+  },
+  {
+    "ok": true,
+    "content": "",
+    "latency_s": 109.75,
+    "finish": "length",
+    "completion_tokens": 400,
+    "reasoning_tokens": 400,
+    "model": "stepfun-ai/step-5-preview",
+    "prompt_id": "phrases"
+  },
+  {
+    "ok": true,
+    "content": "",
+    "latency_s": 30.07,
+    "finish": "length",
+    "completion_tokens": 400,
+    "reasoning_tokens": 400,
+    "model": "stepfun-ai/step-5-preview",
+    "prompt_id": "french"
+  },
+  {
+    "ok": true,
+    "content": "لاباس الحمد لله، يسأل عليك الخير. إنت شنوة أحوالك؟ كل شيء مريغل؟",
+    "latency_s": 159.26,
+    "finish": "stop",
+    "completion_tokens": 26,
+    "reasoning_tokens": 0,
+    "model": "google/gemma-4-31b-it",
+    "prompt_id": "greeting"
+  },
+  {
+    "ok": false,
+    "error": "TimeoutError: The read operation timed out",
+    "latency_s": 200.08,
+    "model": "google/gemma-4-31b-it",
+    "prompt_id": "tunizi"
+  },
+  {
+    "ok": true,
+    "content": "توحشتك، نتلقاو مبعد، وما ثمة حتى مشكل.",
+    "latency_s": 169.73,
+    "finish": "stop",
+    "completion_tokens": 19,
+    "reasoning_tokens": 0,
+    "model": "google/gemma-4-31b-it",
+    "prompt_id": "phrases"
+  },
+  {
+    "ok": false,
+    "error": "TimeoutError: The read operation timed out",
+    "latency_s": 200.12,
+    "model": "google/gemma-4-31b-it",
+    "prompt_id": "french"
+  },
+  {
+    "model": "z-ai/glm-5.3-flash",
+    "prompt_id": "probe",
+    "ok": false,
+    "error": "TimeoutError: The read operation timed out",
+    "latency_s": 200.04
+  }
+]
