@@ -1,0 +1,17 @@
+﻿model_id,coverage,greeting,apology,ramadan,tunizi,phrases,tram,french,story,score,score_max,i_miss_you,note
+moonshotai/kimi-k3.1-pro,full,2,2,2,2,1,2,2,2,15,16,توحشتك,"Finished every prompt. See-you-later drifted to Algerian نتشاوفو. About 30–100s per call."
+meta/muse-glimmer-30b,full,1,2,1,2,0,1,1,2,10,16,نفتقدك / تاقتني,"Best long unsteered story. Ramadan included Moroccan بغرير."
+nvidia/nemotron-3.5-bolt-e4b,full,1,1,1,1,1,2,2,1,10,16,نحبك,"Under 3 seconds. Moroccan leaks: مزيان and حريرة."
+nvidia/nemotron-3-ultra-550b-a55b,full,2,1,1,1,0,1,1,2,9,16,نحس بيك / نفتقدك,"Best NVIDIA-built model. Tunizi reply drifted Algerian: بزاف، راني، تبي."
+nvidia/nemotron-3.5-super-vl-120b-a12b,full,1,1,1,1,0,1,1,0,6,16,نحبك بزاف,Unsteered story was set in a Paris office.
+nvidia/ising-calibration-1.5-31b,full,0,1,1,1,1,1,0,0,5,16,نتوحشّك,Qubit-calibration model that accepts chat. Not a dialect model.
+mistralai/mistral-large-4-1t-a52b,partial,,1,,1,,,2,0,4,8,,"Four of eight prompts timed out at 180s. Answered items scored 4 out of 8. French used على خاطر."
+nvidia/nemotron-3.5-lightning-30b-a3b,full,0,0,0,0,0,0,0,0,0,16,بغيتك,Egyptian. Refused the phrase prompt.
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning,full,0,0,0,0,0,0,0,0,0,16,نحبك قوي,Greeting looped الحمد لله. La Marsa became لمارص.
+google/gemma-4-31b-it,partial,,,,,,,,,,,"توحشتك، نتلقاو مبعد، وما ثمة حتى مشكل","Best idiom line in the run. Greeting invented مريغل. Tunizi and French timed out at 200s. 150–200s per call. Not in the 16-point total."
+minimaxai/minimax-m3.1-flash,partial,,,,,,,,,,,نشتاقلك,Did not know لاباس. Tunizi reply used Moroccan ديالك. French used بسبب.
+stepfun-ai/step-5-preview,partial,,,,,,,,,,,,Opened with لاباس then Modern Standard Arabic. Tunizi phrases and French returned no visible text.
+z-ai/glm-5.3-flash,unavailable,,,,,,,,,,,,No completion within 200 seconds.
+meta/llama-3.3-70b-instruct,unavailable,,,,,,,,,,,,HTTP 410. Retired on NVIDIA NIM on 26 August 2026. Not scored.
+google/gemma-3-12b-it,unavailable,,,,,,,,,,,,Listed by /v1/models. HTTP 404 for this account.
+google/gemma-3-4b-it,unavailable,,,,,,,,,,,,Listed by /v1/models. HTTP 404 for this account.

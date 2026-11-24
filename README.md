@@ -2,7 +2,11 @@
 
 A small prompt suite for checking whether a hosted chat model actually speaks Tunisian Arabic (Derja), including Latin-script Tunizi, instead of drifting into Modern Standard Arabic or another dialect.
 
-The scored run from 24 November 2026 is in [results/report.md](results/report.md). Raw replies are in [results/nim-tunisian-raw.json](results/nim-tunisian-raw.json).
+The scored run from 24 November 2026 is in [results/report.md](results/report.md). The sheet to attach is [results/scores.csv](results/scores.csv). Raw replies are in [results/nim-tunisian-raw.json](results/nim-tunisian-raw.json).
+
+## What to send
+
+Send `results/report.md` for the write-up and `results/scores.csv` for the table. The JSON files are the evidence behind those scores. The API key is not in this repo. Do not paste it into the thread with the team.
 
 ## What was asked
 
