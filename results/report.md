@@ -1,6 +1,6 @@
 # Tunisian Derja on NVIDIA NIM
 
-The table in this write-up is also in [scores.csv](scores.csv), which is the file to attach.
+Lab note for the run summarised in the [README](../README.md). The same numbers are in [scores.csv](scores.csv).
 
 Calls were made on 24 November 2026 against `https://integrate.api.nvidia.com/v1/chat/completions`. Thinking was turned off so the token budget went to the answer. Temperature was 0.3. Each steered prompt used the same system prompt: reply as someone from Tunis, in street Derja, in Arabic script, and do not drift into Egyptian, Levantine, Moroccan, or Algerian.
 

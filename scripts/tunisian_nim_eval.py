@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Send Tunisian Derja / Tunizi prompts to NVIDIA NIM chat models.
+"""Send the Derja / Tunizi prompt set to NVIDIA NIM chat models.
 
 Reads NVIDIA_API_KEY from the environment. The key is never written to disk.
+Scores in results/scores.csv are manual. This script only stores replies.
 """
 
 from __future__ import annotations
